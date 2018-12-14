@@ -1,0 +1,108 @@
+<!-- Header -->
+<header>
+
+    <!-- LOGO + PANIER + CONNEXION  -->
+    <div class="container d-none d-lg-block header-logo">
+        <div class="row py-3 px-3 h-100 justify-content-center align-items-center">
+            
+            <div class="col-md-4 d-flex align-items-center">
+                <div>
+                    <a href="{{ path('home') }}">
+                        <img src="{{ asset( 'assets/images/icones/logo.png' ) }}" class="logo_icone" alt=" Logo de Dev my Shirts">
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-4 text-center d-flex align-items-center justify-content-center">
+                <span class="dev_style">Développeurs de style</span>
+            </div>
+
+            <div class="col-md-4">
+                <div class="row align-items-center user_elements">
+                    <!-- Connexion -->
+                    <div class="col-md-8 h-100 d-flex justify-content-end align-items-center">
+                        <a href="{{ path('login') }}" class="text-midium-metal-upper">Connexion</a>       
+                    </div>
+                    <!-- Panier -->
+                    <div class="col-md-4 h-100">
+                        <div class="row h-100">                            
+                            <div class="col-md-8 h-100 d-flex justify-content-end align-items-center">
+                                <a href="#" class="text-midium-metal-upper">Panier</a> 
+                            </div>
+                            <div class="col-md-4 h-75 p-0 d-flex align-items-center ">
+                                <span class="counter">0</span>
+                                <img src="{{ asset( 'assets/images/icones/panier.svg' ) }}" class="h-100" alt="Icone de panier d'achat">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- //////////////////////// NAVBAR DU SITE ////////////////////////// -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-ocean flex-row-reverse flex-md-row p-lg-0 p-1 p-lg-0 border-bottom-primary">
+        <!-- Navbar Brand -->
+        <div class="navbar-brand d-flex d-flex  px-sm-3 d-lg-none">
+            
+            <div class=" row h-25 px-2 position-relative">
+                <div class="col">
+                    <a class="text-white" href="{{ path('home') }}">DEV <span class="light-text">my Shirts</span></a>
+                </div>
+                <div class="col">
+                    <i class="fas fa-user-alt text-white"></i>
+                </div>
+                <div class="col d-flex align-items-center">
+                    <span class="counter_mobile">0</span>
+                    <img src="{{ asset( 'assets/images/icones/panier-blanc.svg' ) }}" class="h-100 panier_mobile" alt="Icone de panier d'achat">
+                </div>
+            </div>
+
+        </div>
+        <!-- Bouton Toggle -->
+        <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navbar_links" aria-controls="navbar_links" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Liens -->
+        <div class="container mx">
+                 
+            <div class="collapse navbar-collapse text-navbar justify-content-between" id="navbar_links">
+                <!-- Menu principal -->
+                <ul class="navbar-nav">
+                    <li class="nav-item ">
+                        <a class="nav-link py-3 px-3 {% if ((menGalleryNav is defined) or (menSingleNav is defined)) %}active{% endif %}" href="{{ path('mengallery') }}">Homme</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link py-3 px-3 {% if ((womenGalleryNav is defined) or (womenSingleNav is defined)) %}active{% endif %}" href="{{ path('womengallery') }}">Femme</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link py-3 px-3 {% if aboutNav is defined  %}active{% endif %}" href="{{ path('about') }}">Nos Designers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link promo py-3 px-3" href="{{ path('promos') }}">Promos de Noël</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link py-3 px-3  {% if contactNav is defined  %}active{% endif %}" href="{{ path('contact') }}">Contact</a>
+                    </li>
+                </ul>
+
+                <!-- Icones des réseaux sociaux -->
+                <div class="row ml-3 my-2 my-lg-0 pb-2 pb-lg-0 ml-lg-0 mr-lg-0 gr_sociaux">
+                    <div class="col-1 col-lg-6 px-1">
+                        <a href="https://www.facebook.com/Devmyshirts-592002044553765/" target="_blank">
+                            <img class=" icone_sociaux" src="{{ asset( 'assets/images/icones/facebook-blanc.svg' ) }}" alt="Icone de Facebook">
+                        </a>
+                    </div>
+                    <div class="col-1 col-lg-6 px-1 icone_sociaux">
+                        <a href="https://www.instagram.com/devmyshirts/?hl=fr" target="_blank">
+                            <img class=" icone_sociaux" src="{{ asset( 'assets/images/icones/instagram-blanc.svg' ) }}" alt="Icone de Instagram">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </nav>
+
+</header>
